@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
+import Accordion from "./Accordion"
+import Chevron from "./Chevron";
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -20,31 +22,31 @@ export default function GridCreator() {
   return (
     <Grid container spacing={2} className={classes.grid}>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Dairy</Paper>
+        <Accordion title="Dairy" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Vegetables</Paper>
+      <Accordion title="Vegetables" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Fruits</Paper>
+      <Accordion title="Fruits" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Baking and Grains</Paper>
+      <Accordion title="Baking and Grains" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Added Sweeteners</Paper>
+      <Accordion title="Added Sweeteners" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Spices</Paper>
+      <Accordion title="Spices" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Meats</Paper>
+      <Accordion title="Meats" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Fish</Paper>
+      <Accordion title="Fish" content="food"></Accordion>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>Seafood</Paper>
+      <Accordion title="Seafood" content="food"></Accordion>
       </Grid>
     </Grid>
   );
