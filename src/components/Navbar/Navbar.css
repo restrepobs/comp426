@@ -2,13 +2,14 @@ header {
   min-height: 70px;
   background: #555;
   color: whitesmoke;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 header .close {
   height: 5vh;
@@ -54,10 +55,10 @@ header .close {
 
 section {
   min-height: 100vh;
-  background: lightskyblue;
-  display: flex;
+  background: white;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 section h2 {
