@@ -24,7 +24,7 @@ export default class RecipeList extends Component {
                             <Recipe 
                             key={recipe.id}
                             recipe={recipe}
-                            handleDetails={() => handleDetails(0,recipe.id)}/>
+                            handleDetails={() => handleDetails(0,recipe.id,recipe.image,recipe.title)}/>
                         )
                     })}
  

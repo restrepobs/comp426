@@ -36,6 +36,8 @@ header ul li a {
 }
 header ul li a:hover {
   opacity: 1;
+  text-decoration: none;
+  color: white;
 }
 header .menu,
 header .close {
@@ -57,7 +59,7 @@ section {
   min-height: 100vh;
   background: white;
   /* display: flex;
-  justify-content: center;
+  /* justify-content: center;
   align-items: center; */
 }
 
