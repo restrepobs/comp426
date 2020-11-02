@@ -25,7 +25,7 @@ const{handleDetails} = this.props;
                           <button type="button"
                           className="btn btn-primary text-capitalize" onClick={handleDetails}
                           >details</button>
-                          <a href={href} className="btn btn-success mx-2 text-capitalize" target="_blank" rel="noopener noreferrer">recipe url</a>
+                          
                       </div>
                    </div>
                </div>

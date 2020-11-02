@@ -16,13 +16,15 @@ const useStyles = makeStyles((theme) => ({
 export class Home extends Component {
   state={
     recipes: recipes,
-    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=82fc3eb435d84878928dc33d21b4ded3&ingredients=apples,+flour,+sugar&number=2",
+    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=82fc3eb435d84878928dc33d21b4ded3&ingredients=chocolate",
     base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=82fc3eb435d84878928dc33d21b4ded3",
     details_id: 47950,
     pageIndex: 1,
     search: '',
     query:'&ingredients=',
-    error: ''
+    error: '',
+    image: '',
+    title:''
   };
 
   async getRecipes(){
@@ -58,7 +60,7 @@ displayPage=(index) => {
       return(<RecipeList recipes={this.state.recipes} handleDetails={this.handleDetails} value={this.state.search}
       handleChange={this.handleChange} handleSubmit={this.handleSubmit} error={this.state.error}/>)
     case 0:
-      return(<RecipeDetails id={this.state.details_id} handleIndex={this.handleIndex}></RecipeDetails>)
+      return(<RecipeDetails id={this.state.details_id} title={this.state.title} image={this.state.image} handleIndex={this.handleIndex}></RecipeDetails>)
   }
 };
 
@@ -68,17 +70,20 @@ handleIndex = index => {
   })
 }
 
-handleDetails = (index,id) => {
+handleDetails = (index,id,image,title) => {
+  console.log(id);
   this.setState({
     pageIndex: index,
-    details_id: id
+    details_id: id,
+    image: image,
+    title: title
   })
 }
 handleSubmit = (e) => {
   e.preventDefault();
   const{base_url,query,search} = this.state;
   this.setState(() => {
-    return {url: `${base_url}${query}${search}`,search:""}
+    return {url: `${base_url}${query}${search.replaceAll(",",",+")}`,search:""}
   }, () => {
     this.getRecipes();
   })

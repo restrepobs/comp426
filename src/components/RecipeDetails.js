@@ -29,6 +29,7 @@ state={
 }
 async componentDidMount(){
     const id = this.props.id;
+    const title = this.props.title;
     const url = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=82fc3eb435d84878928dc33d21b4ded3`;
     try{
       const data = await fetch(url);
@@ -45,15 +46,20 @@ async componentDidMount(){
     render() {
         const {ingredients} = this.state.recipe;
         const{handleIndex} = this.props;
+        const {title} = this.props.title;
+        console.log(this.props.title);
         return (
             <React.Fragment>
                 <div className="container">
                     <div className="row">
                         <div className="col-10 mx-auto col-md-6 my-3">
                             <button type="button" className="btn btn-warning mb-5 text-capitalize" style={{marginTop: "17vh"}} onClick={() => handleIndex(1)}>back to recipe list</button>
+                            <img src={this.props.image}
+                            className="d-block w-75"
+                            alt="recipe"></img>
                         </div>
                         <div className="col-10 mx-auto col-md-6 my-3">
-                            <h6 className="text-uppercase">title</h6>
+                            <h6 className="text-uppercase" style={{marginTop:"120px"}}>{this.props.title}</h6>
                             <ul className="list-group mt-4">
                                 <h2 className="mt-3 mb-4">ingredients</h2>
                                 {
