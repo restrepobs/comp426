@@ -7,7 +7,7 @@ function App() {
   fetch("http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3", {
     mode: 'no-cors',
   })
-
+  
 
   .then(response => {
 	  console.log(response);
@@ -17,7 +17,4 @@ function App() {
   });
   return <Navbar />;
 }
-
-
-
 export default App;

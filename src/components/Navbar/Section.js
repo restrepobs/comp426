@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Explore, Home, Profile } from "../../pages";
+import { Favorites, Home, Profile } from "../../pages";
 import { Route } from "react-router-dom";
 
 export class Section extends Component {
@@ -7,7 +7,7 @@ export class Section extends Component {
     return (
       <section>
         <Route path="/" component={Home} exact />
-        <Route path="/explore" component={Explore} />
+        <Route path="/favorites" component={Favorites} />
         <Route path="/profile" component={Profile} />
       </section>
     );

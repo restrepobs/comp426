@@ -8,6 +8,7 @@ export default class RecipeSearch extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-10 mx-auto md-8 mt-5 text-center">
+                            <br></br>
                             <h1 className="text-capitalize">search for recipe with ingredients</h1>
                             <form classname="mt-4" onSubmit={handleSubmit}>
                                 <label htmlFor="search" className="text-capitalize">
