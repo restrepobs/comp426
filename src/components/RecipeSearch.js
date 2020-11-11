@@ -1,7 +1,19 @@
 import React, { Component } from 'react'
+import "./RecipeSearch.css";
 
 export default class RecipeSearch extends Component {
+    state={
+        value: this.props.value,
+      };
+
+      changeValue = () => {
+        this.setState({
+          value: this.props.value,
+        })
+      }
+
     render() {
+        console.log(this.state.value);
         const {value, handleSubmit, handleChange} = this.props;
         return (
             <React.Fragment>
@@ -18,9 +30,10 @@ export default class RecipeSearch extends Component {
                                     className="form-control"
                                     value={value}
                                     onChange={handleChange}
+                                    autoFocus=""
                                     ></input>
                                     <div className="input-group-append">
-                                        <button type="submit" className="btn input-group bg-primary text-white" style={{zIndex:0}}>
+                                        <button type="submit" className="btn input-group bg-primary text-white" style={{zIndex:0}} onSubmit={handleSubmit}>
                                         <i class="fas fa-search"></i>
 
                                         </button>

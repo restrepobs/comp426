@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import "./Recipe.css";
 
 export default class Recipe extends Component {
     render() {
@@ -13,11 +14,15 @@ const{handleDetails} = this.props;
             <React.Fragment>
                <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
                    <div className="card">
+
                        <img src={image}
                         className="img-card-top"
                         style={{height:"14rem"}}
                         alt="recipe"
+                        onClick={handleDetails}
                       />
+
+
                       <div className="card-body text-capitalize">
                           <h6>{title}</h6>
                       </div>
