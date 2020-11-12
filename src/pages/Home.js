@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper } from "@material-ui/core";
-import GridCreator from "../components/GridCreator";
 import IngredientHeader from "../components/IngredientHeader";
 import {recipes} from "../tempList";
 import RecipeList from "../components/RecipeList";
 import RecipeDetails from "../components/RecipeDetails";
+import {PuffLoader,BarLoader,BeatLoader} from 'react-spinners';
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -24,7 +24,8 @@ export class Home extends Component {
     query:'&ingredients=',
     error: '',
     image: '',
-    title:''
+    title:'',
+    done: false
   };
 
   async getRecipes(){
@@ -42,7 +43,8 @@ export class Home extends Component {
         })
       }
       this.setState({
-        recipes:jsonData
+        recipes:jsonData,
+        done: true
       })
     }catch(error){
       console.log(error);
@@ -83,7 +85,7 @@ handleSubmit = (e) => {
   e.preventDefault();
   const{base_url,query,search} = this.state;
   this.setState(() => {
-    return {url: `${base_url}${query}${search.replaceAll(",",",+")}`,search:""}
+    return {url: `${base_url}${query}${search.replaceAll(",",",+")}`}
   }, () => {
     this.getRecipes();
   })
@@ -103,7 +105,18 @@ handleChange = (e) => {
     // console.log(this.state.recipes);
     return (
       <React.Fragment>
-        {this.displayPage(this.state.pageIndex)}
+        {!this.state.done ? (
+          <div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h1 style={{textAlign:"center"}}>Loading</h1>
+                        <div style={{display:"flex",justifyContent: "center", alignItems:'center'}}>
+                            <PuffLoader loading/>
+                        </div>
+          </div>
+        ): this.displayPage(this.state.pageIndex)}
+
       </React.Fragment>
     )
   }
