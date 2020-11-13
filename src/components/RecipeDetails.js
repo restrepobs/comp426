@@ -85,6 +85,8 @@ async componentDidMount(){
                             <span><h6>Total: {readyInMinutes} minutes | Yield: {servings} servings</h6></span>
                             <a href={sourceUrl} target="_blank" rel="noopener noreferrer"
                             className="btn btn-success mt-2 text-capitalize">recipe url</a>
+                            <br></br>
+                            <br></br>
                             <ul className="list-group mt-4">
                                 <h2 className="mt-3 mb-4">ingredients</h2>
                                 {   
