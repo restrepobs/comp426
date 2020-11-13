@@ -32,6 +32,9 @@ export class Home extends Component {
     try{
       const data = await fetch(this.state.url);
       const jsonData = await data.json();
+      this.setState({
+        error: ''
+      })
       if(jsonData.length === 0){
         this.setState(() => {
           return {error:"sorry but your search did not return any results"}

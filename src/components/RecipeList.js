@@ -18,7 +18,7 @@ export default class RecipeList extends Component {
                 {/* end of title */}
                 <div className="row">
                     {console.log(error)}
-                    {error?<h1 className="text-danger text-center">{error}</h1> 
+                    {error?<h1 className="text-danger text-center" style={{margin: "0 auto"}}>{error}</h1> 
                     : recipes.map(recipe=>{
                         return(
                             <Recipe 
