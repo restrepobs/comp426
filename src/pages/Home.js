@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
 export class Home extends Component {
   state={
     recipes: recipes,
-    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=82fc3eb435d84878928dc33d21b4ded3&ingredients=chocolate",
-    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=82fc3eb435d84878928dc33d21b4ded3",
+    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e&ingredients=chocolate",
+    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e",
     details_id: 47950,
     pageIndex: 1,
     search: '',
@@ -32,6 +32,9 @@ export class Home extends Component {
     try{
       const data = await fetch(this.state.url);
       const jsonData = await data.json();
+      this.setState({
+        error: ''
+      })
       if(jsonData.length === 0){
         this.setState(() => {
           return {error:"sorry but your search did not return any results"}

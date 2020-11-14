@@ -33,12 +33,12 @@ export default class RecipeSearch extends Component {
                                     <Autocomplete 
                                     suggestions={food}
                                     ></Autocomplete>
-                                    <input type="text" name="serch" placeholder="ex: chicken,onions,carrots" 
+                                    {/*<input type="text" name="serch" placeholder="ex: chicken,onions,carrots" 
                                     className="form-control"
                                     value={value}
                                     onChange={handleChange}
                                     autoFocus=""
-                                    ></input>
+                                     ></input>*/}
 
                                     <div className="input-group-append">
                                         <button type="submit" className="btn input-group bg-primary text-white" style={{zIndex:0}} onSubmit={handleSubmit}>

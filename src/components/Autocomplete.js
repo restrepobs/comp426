@@ -26,15 +26,14 @@ export class Autocomplete extends Component {
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
 
-    // Filter our suggestions that don't contain the user's input
+    // Filter out suggestions that don't contain the user's input
     const filteredSuggestions = suggestions.filter(
       suggestion =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
     
 
-    // Update the user input and filtered suggestions, reset the active
-    // suggestion and make sure the suggestions are shown
+    // Update the user input and filtered suggestions
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions,
