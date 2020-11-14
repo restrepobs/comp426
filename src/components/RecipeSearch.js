@@ -32,6 +32,9 @@ export default class RecipeSearch extends Component {
                                     <div className="input-group">
                                     <Autocomplete 
                                     suggestions={food}
+                                    value={value}
+                                    handleChange={handleChange}
+                                    handleSubmit={handleSubmit}
                                     ></Autocomplete>
                                     {/*<input type="text" name="serch" placeholder="ex: chicken,onions,carrots" 
                                     className="form-control"
