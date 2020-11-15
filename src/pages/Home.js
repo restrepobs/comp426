@@ -35,6 +35,7 @@ export class Home extends Component {
       this.setState({
         error: ''
       })
+      console.log(this.state.url)
       if(jsonData.length === 0){
         this.setState(() => {
           return {error:"sorry but your search did not return any results"}

@@ -20,19 +20,20 @@ export class Autocomplete extends Component {
       userInput: ""
     };
   }
-
+  
   // Function called when input value is changed
   onChange = e => {
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
-
+    const {value, handleSubmit, handleChange} = this.props;
+    console.log(value)
     // Filter out suggestions that don't contain the user's input
     const filteredSuggestions = suggestions.filter(
       suggestion =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
     
-
+      
     // Update the user input and filtered suggestions
     this.setState({
       activeSuggestion: 0,
@@ -81,11 +82,18 @@ export class Autocomplete extends Component {
     }
   };
 
+  change = (e) => {
+    const {value, handleSubmit, handleChange} = this.props;
+    handleChange(e);
+    this.onChange(e);
+  }
+
   render() {
     const {
       onChange,
       onClick,
       onKeyDown,
+      change,
       state: {
         activeSuggestion,
         filteredSuggestions,
@@ -93,6 +101,7 @@ export class Autocomplete extends Component {
         userInput
       }
     } = this;
+    const {value, handleSubmit, handleChange} = this.props;
 
     let suggestionsListComponent;
 
@@ -132,9 +141,9 @@ export class Autocomplete extends Component {
       <Fragment>
         <input
           type="text"
-          onChange={onChange}
+          onChange={change}
           onKeyDown={onKeyDown}
-          value={userInput}
+          value={value}
         />
         {suggestionsListComponent}
       </Fragment>
