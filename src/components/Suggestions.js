@@ -1,7 +1,7 @@
 const food =[
     'apple',
     'almond',
-    'anchovies,',
+    'anchovies',
     'apricots',
     'artichokes',
     'avacado',
