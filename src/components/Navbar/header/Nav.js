@@ -22,6 +22,9 @@ export class Nav extends Component {
           <li>
             <Link to="/profile">Profile</Link>
           </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
           <li className="close" onClick={this.menuToggle}>
             X
           </li>
