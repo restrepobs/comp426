@@ -6,6 +6,9 @@ import {recipes} from "../tempList";
 import RecipeList from "../components/RecipeList";
 import RecipeDetails from "../components/RecipeDetails";
 import {PuffLoader,BarLoader,BeatLoader} from 'react-spinners';
+import Autocomplete from '../components/Autocomplete';
+
+
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -16,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 export class Home extends Component {
   state={
     recipes: recipes,
-    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e&ingredients=chocolate",
-    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e",
+    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=52608792481d482c8a3ceec0f1c6b858&ingredients=chocolate",
+    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=52608792481d482c8a3ceec0f1c6b858",
     details_id: 47950,
     pageIndex: 1,
     search: '',
@@ -30,12 +33,18 @@ export class Home extends Component {
 
   async getRecipes(){
     try{
-      const data = await fetch(this.state.url);
+      let search = localStorage.getItem("search");
+      let url = this.state.url;
+      if (search){
+        search = JSON.parse(search);
+        url=`${this.state.base_url}${this.state.query}${search.replaceAll(",",",+")}`
+      }
+      console.log(url);
+      const data = await fetch(url);
       const jsonData = await data.json();
       this.setState({
         error: ''
       })
-      console.log(this.state.url)
       if(jsonData.length === 0){
         this.setState(() => {
           return {error:"sorry but your search did not return any results"}
@@ -51,11 +60,23 @@ export class Home extends Component {
         done: true
       })
     }catch(error){
-      console.log(error);
+ 
     }
   }
 
   componentDidMount(){
+    const search = localStorage.getItem("search");
+    const{base_url,query} = this.state;
+    if (search) {
+      this.setState({
+        url:`${base_url}${query}${search.replaceAll(",",",+")}`
+      })
+    }
+    else{
+      this.setState({
+        search: "chocolate"
+      })
+    }
     this.getRecipes()
   }
 
@@ -71,13 +92,13 @@ displayPage=(index) => {
 };
 
 handleIndex = index => {
+  localStorage.setItem("index", JSON.stringify(index))
   this.setState({
     pageIndex: index
   })
 }
 
 handleDetails = (index,id,image,title) => {
-  console.log(id);
   this.setState({
     pageIndex: index,
     details_id: id,
@@ -88,13 +109,12 @@ handleDetails = (index,id,image,title) => {
 handleSubmit = (e) => {
   e.preventDefault();
   const{base_url,query,search} = this.state;
+  localStorage.setItem("search", JSON.stringify(search))
   this.setState(() => {
-    return {url: `${base_url}${query}${search.replaceAll(",",",+")}`}
+    return {url: `${base_url}${query}${search.replaceAll(",",",+")}`, }
   }, () => {
     this.getRecipes();
   })
-
-
 }
 
 
@@ -102,7 +122,7 @@ handleChange = (e) => {
   this.setState({
     search:e.target.value
   },()=>{
-    console.log(this.state.search)
+    return
   })
 }
   render() {
@@ -119,7 +139,8 @@ handleChange = (e) => {
                             <PuffLoader loading/>
                         </div>
           </div>
-        ): this.displayPage(this.state.pageIndex)}
+        ): 
+  this.displayPage(this.state.pageIndex)}
 
       </React.Fragment>
     )
