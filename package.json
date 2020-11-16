@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "express": "^4.17.1",
+    "python3": "0.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-load-script": "0.0.6",

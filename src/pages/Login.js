@@ -14,12 +14,12 @@ export class Login extends Component {
           <br></br>
           <form>
                 <div>
-                 <label for="username">Username</label>
-                <input id="username" width="20" required></input>
+                 <label for="username">Username </label>
+                <input id="username" style = {{width: "300px"}} required></input>
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input  id="password" required></input>
+                    <input  id="password" style = {{width: "300px"}} required></input>
   </div>
   <button type="submit">Login</button>
 </form>
