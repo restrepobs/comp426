@@ -26,12 +26,13 @@ export class Autocomplete extends Component {
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
     const {value, handleSubmit, handleChange} = this.props;
-    console.log(value)
+
     // Filter out suggestions that don't contain the user's input
     const filteredSuggestions = suggestions.filter(
       suggestion =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
+   
     
       
     // Update the user input and filtered suggestions
@@ -50,13 +51,13 @@ export class Autocomplete extends Component {
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
-      userInput: e.currentTarget.innerText
+      userInput: e.currentTarget.innerText,
     });
   };
 
   onKeyDown = e => {
     const { activeSuggestion, filteredSuggestions } = this.state;
-
+    // User pressed enter key
     if (e.keyCode === 13) {
       this.setState({
         activeSuggestion: 0,
@@ -131,12 +132,13 @@ export class Autocomplete extends Component {
       } else {
         suggestionsListComponent = (
           <div class="no-suggestions">
-            <em>No suggestions!</em>
+            <em>Sorry no suggestions available</em>
           </div>
         );
       }
     }
-
+    console.log('userInput ' + this.state.userInput)
+    const searchResult = this.state.userInput;
     return (
       <Fragment>
         <input
@@ -144,7 +146,7 @@ export class Autocomplete extends Component {
           type="text"
           onChange={change}
           onKeyDown={onKeyDown}
-          value={value}
+          value={searchResult}
         />
         {suggestionsListComponent}
       </Fragment>

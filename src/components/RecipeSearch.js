@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./RecipeSearch.css";
-import Autocomplete from './Autocomplete'
+import Autocomplete, { search } from './Autocomplete'
 import {food} from './Suggestions'
 import './Autocomplete.css'
 
@@ -16,7 +16,7 @@ export default class RecipeSearch extends Component {
       }
 
     render() {
-        console.log(this.state.value);
+       // console.log(this.state.value);
         const {value, handleSubmit, handleChange} = this.props;
         return (
             <React.Fragment>
@@ -32,7 +32,7 @@ export default class RecipeSearch extends Component {
                                     <div className="input-group">
                                     <Autocomplete 
                                     suggestions={food}
-                                    value={value}
+                                    //value= {value}
                                     handleChange={handleChange}
                                     handleSubmit={handleSubmit}
                                     ></Autocomplete>

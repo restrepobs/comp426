@@ -6,6 +6,9 @@ import {recipes} from "../tempList";
 import RecipeList from "../components/RecipeList";
 import RecipeDetails from "../components/RecipeDetails";
 import {PuffLoader,BarLoader,BeatLoader} from 'react-spinners';
+import Autocomplete from '../components/Autocomplete';
+
+
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -16,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 export class Home extends Component {
   state={
     recipes: recipes,
-    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e&ingredients=chocolate",
-    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e",
+    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=52608792481d482c8a3ceec0f1c6b858&ingredients=chocolate",
+    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=52608792481d482c8a3ceec0f1c6b858",
     details_id: 47950,
     pageIndex: 1,
     search: '',
@@ -112,8 +115,6 @@ handleSubmit = (e) => {
   }, () => {
     this.getRecipes();
   })
-
-
 }
 
 

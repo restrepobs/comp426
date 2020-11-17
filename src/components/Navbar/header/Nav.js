@@ -17,7 +17,7 @@ export class Nav extends Component {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/favorites">Favorites</Link>
+            <Link to="/browse">Browse</Link>
           </li>
           <li>
             <Link to="/profile">Profile</Link>
