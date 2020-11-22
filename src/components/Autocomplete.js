@@ -129,16 +129,11 @@ export class Autocomplete extends Component {
             })}
           </ul>
         );
-      } else {
-        suggestionsListComponent = (
-          <div class="no-suggestions">
-            <em>Sorry no suggestions available</em>
-          </div>
-        );
-      }
+      } 
     }
     console.log('userInput ' + this.state.userInput)
     const searchResult = this.state.userInput;
+    localStorage.setItem('searchResult', JSON.stringify(searchResult));
     return (
       <Fragment>
         <input

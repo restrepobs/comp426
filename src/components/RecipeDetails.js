@@ -30,7 +30,7 @@ state={
     done: false
 }
 async componentDidMount(){
-    const id = this.props.id;
+    const id = this.props.id; 
     // const url = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=82fc3eb435d84878928dc33d21b4ded3`;
     const url = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=82fc3eb435d84878928dc33d21b4ded3`;
 

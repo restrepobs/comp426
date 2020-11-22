@@ -2,19 +2,27 @@
   "name": "comp426_finalproject",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://us-central1-recipeezy-bd890.cloudfunctions.net/api",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.21.0",
+    "dayjs": "^1.9.6",
     "express": "^4.17.1",
+    "jwt-decode": "^3.1.2",
     "python3": "0.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-load-script": "0.0.6",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-spinners": "^0.9.0"
+    "react-spinners": "^0.9.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

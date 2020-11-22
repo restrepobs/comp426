@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 
 export class Nav extends Component {
   state = {
@@ -14,16 +15,16 @@ export class Nav extends Component {
       <>
         <ul className={toggle ? "toggle" : ""} style={{ paddingLeft: "0px" }}>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink exact activeStyle={{color: 'yellow'}} to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/browse">Browse</Link>
+            <NavLink activeStyle={{color: 'yellow'}} to="/browse">Browse</NavLink>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <NavLink activeStyle={{color: 'yellow'}} to="/profile">Profile</NavLink>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <NavLink activeStyle={{color: 'yellow'}} to="/login">Login</NavLink>
           </li>
           <li className="close" onClick={this.menuToggle}>
             X

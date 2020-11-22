@@ -2,10 +2,28 @@
   text-align: center;
   overflow: hidden;
 }
+body {
+  background-color: rgb(245, 245, 245);
+}
 
+a {
+  text-decoration: none;
+}
+.nav-container svg {
+  color: #fff;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.container {
+  margin: 80px auto 0 auto;
+  max-width: 1200px;
+}
+
+.nav-container {
+  margin: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -33,7 +33,7 @@ export class Home extends Component {
 
   async getRecipes(){
     try{
-      let search = localStorage.getItem("search");
+      let search = localStorage.getItem("searchResult");
       let url = this.state.url;
       if (search){
         search = JSON.parse(search);
@@ -131,9 +131,6 @@ handleChange = (e) => {
       <React.Fragment>
         {!this.state.done ? (
           <div>
-            <br></br>
-            <br></br>
-            <br></br>
             <h1 style={{textAlign:"center"}}>Loading</h1>
                         <div style={{display:"flex",justifyContent: "center", alignItems:'center'}}>
                             <PuffLoader loading/>
