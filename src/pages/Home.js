@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 import {recipes} from "../tempList";
-import RecipeList from "../components/RecipeList";
-import RecipeDetails from "../components/RecipeDetails";
+import RecipeList from "../components/Recipes/RecipeList";
+import RecipeDetails from "../components/Recipes/RecipeDetails";
 import {PuffLoader} from 'react-spinners';
 
 

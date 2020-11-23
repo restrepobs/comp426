@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {recipe} from "../tempDetails"; 
+import {recipe} from "../../tempDetails"; 
 import {PuffLoader} from 'react-spinners';
 export default class RecipeDetails extends Component {
 state={

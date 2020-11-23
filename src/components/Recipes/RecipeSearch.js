@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "./RecipeSearch.css";
-import Autocomplete from './Autocomplete'
-import {food} from './Suggestions'
-import './Autocomplete.css'
+import Autocomplete from '../Autocomplete/Autocomplete'
+import {food} from '../Autocomplete/Suggestions'
+import '../Autocomplete/Autocomplete.css'
 import Typography from "@material-ui/core/Typography";
 
 export default class RecipeSearch extends Component {
