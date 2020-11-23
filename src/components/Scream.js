@@ -71,10 +71,7 @@ export class Scream extends Component {
                     <Typorgraphy variant="body1">{this.props.body}</Typorgraphy>
                     {likeButton}
                     <span>{this.props.likeCount}like</span>
-                    <MyButton tip="comments">
-                        <ChatIcon color="primary"/>
-                    </MyButton>
-                    <span>{this.props.commentCount}comment</span>
+                    
                 </CardContent>
             </Card>
         )

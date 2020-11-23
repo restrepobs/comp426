@@ -38,15 +38,8 @@ export default class RecipeSearch extends Component {
                                     handleChange={handleChange}
                                     handleSubmit={handleSubmit}
                                     ></Autocomplete>
-                                    {/*<input type="text" name="serch" placeholder="ex: chicken,onions,carrots" 
-                                    className="form-control"
-                                    value={value}
-                                    onChange={handleChange}
-                                    autoFocus=""
-                                     ></input>*/}
-
                                     <div className="input-group-append">
-                                        <button type="submit" className="btn input-group text-white" style={{zIndex:0, backgroundColor: '#3F51B0'}} onSubmit={handleSubmit}>
+                                        <button type="submit" className="btn input-group text-white" style={{zIndex:0, backgroundColor: '#3F51B0', position: 'absolute', width: '40px', height: '37px', top: '0px'}} onSubmit={handleSubmit}>
                                         <i class="fas fa-search"></i>
 
                                         </button>

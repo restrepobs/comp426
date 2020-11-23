@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import { Browse, Home, Profile, Login, SignUp, Explore } from "./pages";
+import { Browse, Home, Profile, Login, SignUp, Explore, User } from "./pages";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import jwtDecode from 'jwt-decode';
 import NavLink from 'react-router-dom';

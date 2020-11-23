@@ -109,13 +109,13 @@ export class Autocomplete extends Component {
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-          <ul class="suggestions">
+          <ul class="suggestions" >
             {filteredSuggestions.map((suggestion, index) => {
               let className;
 
-              if (index === activeSuggestion) {
-                className = "suggestion-active";
-              }
+              // if (index === activeSuggestion) {
+              //   className = "suggestion-active";
+              // }
 
               return (
                 <li

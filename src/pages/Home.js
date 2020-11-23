@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 export class Home extends Component {
   state={
     recipes: recipes,
-    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=52608792481d482c8a3ceec0f1c6b858&ingredients=chocolate",
-    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=52608792481d482c8a3ceec0f1c6b858",
+    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825eingredients=chocolate",
+    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e",
     details_id: 47950,
     pageIndex: 1,
     search: '',
@@ -33,9 +33,10 @@ export class Home extends Component {
 
   async getRecipes(){
     try{
-      let search = localStorage.getItem("searchResult");
+      let search = localStorage.getItem("search");
       let url = this.state.url;
-      if (search){
+      console.log(search);
+      if (search && JSON.parse(search) !== ""){
         search = JSON.parse(search);
         url=`${this.state.base_url}${this.state.query}${search.replaceAll(",",",+")}`
       }
@@ -109,7 +110,11 @@ handleDetails = (index,id,image,title) => {
 handleSubmit = (e) => {
   e.preventDefault();
   const{base_url,query,search} = this.state;
-  localStorage.setItem("search", JSON.stringify(search))
+  let result = localStorage.getItem('searchResult');
+  if(JSON.parse(result) !== ""){
+    localStorage.setItem("search", result);
+
+  }
   this.setState(() => {
     return {url: `${base_url}${query}${search.replaceAll(",",",+")}`, }
   }, () => {
