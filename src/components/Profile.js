@@ -103,6 +103,7 @@ export class Profile extends Component {
                     <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
     
                     </div>
+                    <p style={{marginBottom:"-10px", color: '#3f51b5'}}>logout</p>
                     <MyButton tip="Logout" onClick={this.handleLogout} >
                       <KeyboardReturn color="primary"/>
                     </MyButton>

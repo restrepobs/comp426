@@ -21,7 +21,7 @@ export class FirebaseNav extends Component {
                                 <PostScream/>
                              </li>
                              <li style={{display: 'inline-block', padding: '8px', color: 'white'}}>
-                           <NavLink exact activeStyle={{color: 'yellow'}} to="/">Home</NavLink>
+                           <NavLink exact activeStyle={{color: 'grey'}} to="/">Home</NavLink>
 
                              </li>
                              <li style={{display: 'inline-block', padding: '8px'}}>
@@ -40,24 +40,24 @@ export class FirebaseNav extends Component {
                     <Fragment>
                         <ul>
                              <li style={{display: 'inline-block', padding: '8px'}}>
-                           <NavLink exact activeStyle={{color: 'yellow'}} to="/">Home</NavLink>
+                           <NavLink exact activeStyle={{color: 'grey'}} to="/">Home</NavLink>
 
                              </li>
                              <li style={{display: 'inline-block', padding: '8px'}}>
-                           <NavLink exact activeStyle={{color: 'yellow'}} to="/explore">Profile</NavLink>
+                           <NavLink exact activeStyle={{color: 'grey'}} to="/explore">Profile</NavLink>
 
                              </li>
                              <li style={{display: 'inline-block', padding: '8px'}}>
 
-                           <NavLink  activeStyle={{color: 'yellow'}} to="/browse">Browse</NavLink>
+                           <NavLink  activeStyle={{color: 'grey'}} to="/browse">Browse</NavLink>
                              </li>
                              <li style={{display: 'inline-block', padding: '8px'}}>
 
-                            <NavLink  activeStyle={{color: 'yellow'}} to="/login">Login</NavLink>
+                            <NavLink  activeStyle={{color: 'grey'}} to="/login">Login</NavLink>
                             </li>
                             <li style={{display: 'inline-block', padding: '8px'}}>
 
-                            <NavLink  activeStyle={{color: 'yellow'}} to="/signup">Signup</NavLink>
+                            <NavLink  activeStyle={{color: 'grey'}} to="/signup">Signup</NavLink>
                          </li>
                         </ul>
                     </Fragment>

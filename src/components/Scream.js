@@ -71,8 +71,7 @@ export class Scream extends Component {
                     </Typorgraphy>
                     <Typorgraphy variant="body2" color="textSecondary">{this.props.created}</Typorgraphy>
                     <Typorgraphy variant="body1">{this.props.body}</Typorgraphy>
-                    {likeButton}
-                    <span>like</span>
+                    
                     
                 </CardContent>
             </Card>
