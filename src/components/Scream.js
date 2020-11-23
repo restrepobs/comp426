@@ -3,6 +3,8 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import DeleteScream from './DeleteScream';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 //MUI Stuff
 import Card from "@material-ui/core/Card";
 import CardContent from '@material-ui/core/CardContent';
@@ -38,6 +40,7 @@ export class Scream extends Component {
     }
     render() {
         const {classes,user:{authenticated, credentials: {handle}}} = this.props;
+        dayjs.extend(relativeTime);
         const likeButton = !authenticated ? (
             <MyButton tip="Like">
                 <Link to="/login">
@@ -61,12 +64,15 @@ export class Scream extends Component {
         return (
             <Card className={classes.card}>
                 <CardContent className={classes.content}>
-                    <Typorgraphy variant="h5" component={Link} to={`/users/${this.props.handle}`} >{this.props.handle}</Typorgraphy>
+                    <Typorgraphy variant="h5" color="primary" >{this.props.handle}</Typorgraphy>
                     {deleteButton}
+                    <Typorgraphy variant="body2" color="textSecondary">
+                        {dayjs(this.props.createdAt).fromNow()}
+                    </Typorgraphy>
                     <Typorgraphy variant="body2" color="textSecondary">{this.props.created}</Typorgraphy>
                     <Typorgraphy variant="body1">{this.props.body}</Typorgraphy>
                     {likeButton}
-                    <span>{this.props.likeCount}like</span>
+                    <span>like</span>
                     
                 </CardContent>
             </Card>
@@ -78,7 +84,7 @@ Scream.propTypes = {
     likeScream: PropTypes.func.isRequired,
     unlikeScream: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
-    scream: PropTypes.object.isRequired,
+    // scream: PropTypes.object.isRequired,
     classes: PropTypes.object.isRequired,
   };
   

@@ -18,7 +18,7 @@ export class Explore extends Component {
                     screams.map((scream) => 
                         <Scream key ={scream.screamId} body={scream.body} handle={scream.userHandle} 
                         likeCount={scream.likeCount} commentCount={scream.commentCount}
-                        screamId={scream.screamId}
+                        screamId={scream.screamId} createdAt={scream.createdAt}
                         />)
                 ) : (<div>
                     <h1>Loading</h1>

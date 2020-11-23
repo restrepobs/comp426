@@ -25,12 +25,12 @@ export class FirebaseNav extends Component {
 
                              </li>
                              <li style={{display: 'inline-block', padding: '8px'}}>
-                           <NavLink exact activeStyle={{color: 'yellow'}} to="/explore">Profile</NavLink>
+                           <NavLink exact activeStyle={{color: 'grey'}} to="/explore">Profile</NavLink>
 
                              </li>
                              <li style={{display: 'inline-block', padding: '8px'}}>
 
-                           <NavLink  activeStyle={{color: 'yellow'}} to="/browse">Browse</NavLink>
+                           <NavLink  activeStyle={{color: 'grey'}} to="/browse">Browse</NavLink>
                              </li>
 
                          </ul>

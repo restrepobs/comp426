@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./Recipe.css";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 export default class Recipe extends Component {
     render() {
@@ -23,7 +24,8 @@ const{handleDetails} = this.props;
 
 
                       <div className="card-body text-capitalize">
-                          <h6>{title}</h6>
+                          
+                          <Typography variant="h5">{title}</Typography>
                       </div>
                       <div className="card-footer">
                           {/* <button type="button"

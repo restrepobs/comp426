@@ -12,8 +12,8 @@ import {PuffLoader} from 'react-spinners';
 export class Home extends Component {
   state={
     recipes: recipes,
-    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825eingredients=chocolate",
-    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=35d14b0f986b4ce68a582bf645a7825e",
+    url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=82fc3eb435d84878928dc33d21b4ded3&ingredients=chocolate",
+    base_url: "https://api.spoonacular.com/recipes/findByIngredients?apiKey=82fc3eb435d84878928dc33d21b4ded3",
     details_id: 47950,
     pageIndex: 1,
     search: '',

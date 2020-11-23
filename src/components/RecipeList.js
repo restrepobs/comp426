@@ -13,7 +13,7 @@ export default class RecipeList extends Component {
                 <div className="row">
                     <div className="col-10 mx-auto col-md-6 text-center 
                     text-uppercase mb-3">
-                        <Typography variant="h3"> Recipe LIst</Typography>
+                        <Typography variant="h3"> Recipe List</Typography>
                     </div>
                 </div>
                 {/* end of title */}

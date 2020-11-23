@@ -25,7 +25,7 @@ export class Autocomplete extends Component {
   onChange = e => {
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
-    const {value, handleSubmit, handleChange} = this.props;
+    
 
     // Filter out suggestions that don't contain the user's input
     const filteredSuggestions = suggestions.filter(
@@ -84,25 +84,23 @@ export class Autocomplete extends Component {
   };
 
   change = (e) => {
-    const {value, handleSubmit, handleChange} = this.props;
+    const {handleChange} = this.props;
     handleChange(e);
     this.onChange(e);
   }
 
   render() {
     const {
-      onChange,
       onClick,
       onKeyDown,
       change,
       state: {
-        activeSuggestion,
         filteredSuggestions,
         showSuggestions,
         userInput
       }
     } = this;
-    const {value, handleSubmit, handleChange} = this.props;
+    
 
     let suggestionsListComponent;
 
@@ -131,7 +129,6 @@ export class Autocomplete extends Component {
         );
       } 
     }
-    console.log('userInput ' + this.state.userInput)
     const searchResult = this.state.userInput;
     localStorage.setItem('searchResult', JSON.stringify(searchResult));
     return (

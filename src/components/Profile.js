@@ -10,7 +10,6 @@ import { logoutUser } from '../redux/actions/userActions';
 
 //MUI stuff
 import Button from '@material-ui/core/Button';
-import MuiLink from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import LocationOn from '@material-ui/icons/LocationOn';
@@ -76,12 +75,12 @@ export class Profile extends Component {
     render() {
         const {classes, user: {credentials: {handle, createdAt, bio, website, location}, loading, authenticated}} = this.props;
         let profileMarkup = !loading ? (authenticated ? (
-            <Paper classname={classes.paper}>
+            <Paper className={classes.paper}>
                 <div className={classes.profile}>
                 <div className='profile-details'>
-                    <MuiLink component={Link} to={`/users/${handle}`} color="primary" variant='h5'>
-                        @{handle}
-                    </MuiLink>
+                    <Typography color="primary" variant='h5'>
+                      @{handle}
+                    </Typography>
                     <hr/>
                     {bio && <Typography variant="body2">{bio}</Typography>}
                     <hr/>
@@ -141,7 +140,6 @@ const mapActionsToProps = { logoutUser};
 
 Profile.propTypes = {
   logoutUser: PropTypes.func.isRequired,
-  uploadImage: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired
 }
