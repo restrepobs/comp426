@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./RecipeSearch.css";
-import Autocomplete, { search } from './Autocomplete'
+import Autocomplete from './Autocomplete'
 import {food} from './Suggestions'
 import './Autocomplete.css'
 import Typography from "@material-ui/core/Typography";
@@ -17,8 +17,7 @@ export default class RecipeSearch extends Component {
       }
 
     render() {
-       // console.log(this.state.value);
-        const {value, handleSubmit, handleChange} = this.props;
+        const {handleSubmit, handleChange} = this.props;
         return (
             <React.Fragment>
                 <div className="container">
@@ -27,7 +26,7 @@ export default class RecipeSearch extends Component {
                             <br></br>
                             <Typography variant="h2"> Recipeezy</Typography>
                             
-                            <form classname="mt-4" onSubmit={handleSubmit}>
+                            <form className="mt-4" onSubmit={handleSubmit}>
                                 <label htmlFor="search" className="text-capitalize">
                                     type ingredients separated by comma
                                 </label>
@@ -40,7 +39,7 @@ export default class RecipeSearch extends Component {
                                     ></Autocomplete>
                                     <div className="input-group-append">
                                         <button type="submit" className="btn input-group text-white" style={{zIndex:0, backgroundColor: '#3F51B0', position: 'absolute', width: '40px', height: '37px', top: '0px'}} onSubmit={handleSubmit}>
-                                        <i class="fas fa-search"></i>
+                                        <i className="fas fa-search"></i>
 
                                         </button>
                                     </div>

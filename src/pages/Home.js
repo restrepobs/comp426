@@ -1,21 +1,14 @@
 import React, { Component } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Paper } from "@material-ui/core";
-import IngredientHeader from "../components/IngredientHeader";
+
 import {recipes} from "../tempList";
 import RecipeList from "../components/RecipeList";
 import RecipeDetails from "../components/RecipeDetails";
-import {PuffLoader,BarLoader,BeatLoader} from 'react-spinners';
-import Autocomplete from '../components/Autocomplete';
+import {PuffLoader} from 'react-spinners';
 
 
 
-const useStyles = makeStyles((theme) => ({
-  grid: {
-    width: "100%",
-    margin: "0px",
-  },
-}));
+
+
 export class Home extends Component {
   state={
     recipes: recipes,
@@ -35,12 +28,10 @@ export class Home extends Component {
     try{
       let search = localStorage.getItem("search");
       let url = this.state.url;
-      console.log(search);
       if (search && JSON.parse(search) !== ""){
         search = JSON.parse(search);
         url=`${this.state.base_url}${this.state.query}${search.replaceAll(",",",+")}`
       }
-      console.log(url);
       const data = await fetch(url);
       const jsonData = await data.json();
       this.setState({
@@ -131,7 +122,6 @@ handleChange = (e) => {
   })
 }
   render() {
-    // console.log(this.state.recipes);
     return (
       <React.Fragment>
         {!this.state.done ? (

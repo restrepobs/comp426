@@ -6,9 +6,7 @@ export default class Recipe extends Component {
     render() {
         const {
             image,
-            id,
             title,
-            href,
         } = this.props.recipe;
 const{handleDetails} = this.props;
         return (

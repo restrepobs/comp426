@@ -1,11 +1,9 @@
 import React from "react";
 import "./App.css";
-import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
-import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import { Browse, Home, Profile, Login, SignUp, Explore, User } from "./pages";
+import { Browse, Home, Login, SignUp, Explore, } from "./pages";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import jwtDecode from 'jwt-decode';
-import NavLink from 'react-router-dom';
+
 
 //Components
 import FirebaseNav from './components/FirebaseNav';
@@ -21,7 +19,7 @@ import axios from "axios";
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
+
   if(decodedToken.exp * 1000 < Date.now()){
     store.dispatch(logoutUser());
     window.location.href = '/login';
@@ -33,18 +31,6 @@ if(token){
 }
 
 function App() {
-  // fetch("http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3", {
-  //   mode: 'no-cors',
-  // })
-  
-
-  // .then(response => {
-	//   console.log(response);
-  // })
-  // .catch(err => {
-	//   console.log(err);
-  // });
-  // return <Navbar />;
   return(
     <Provider store = {store}>
       <div>
@@ -52,7 +38,7 @@ function App() {
           <FirebaseNav/>
           <div className="container">
           <Switch>
-            <Route exact path="/" component={Home}/>
+            {/* <Route exact path="/" component={Home}/> */}
             <Route exact path="/browse" component={Browse}/> 
             <Route exact path="/explore" component={Explore}/>
             <AuthRoute exact path="/login" component={Login} />

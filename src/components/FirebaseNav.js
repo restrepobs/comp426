@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import {Link} from 'react-router-dom';
-import MyButton from '../util/MyButton';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import PostScream from './PostScream';
@@ -8,9 +6,6 @@ import {NavLink} from 'react-router-dom';
 //MUI stuff
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-
-import HomeIcon from '@material-ui/icons/Home';
 
 
 export class FirebaseNav extends Component {

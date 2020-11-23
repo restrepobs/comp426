@@ -10,7 +10,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 //Redux
-import {connect, connent} from 'react-redux';
+import {connect} from 'react-redux';
 import {loginUser} from '../redux/actions/userActions';
 
 

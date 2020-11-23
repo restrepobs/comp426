@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export class Login extends Component {
     render() {
-        console.log("hiiiii")
       return (
           
           

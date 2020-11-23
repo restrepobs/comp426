@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import dayjs from 'dayjs';
 import EditDetails from './EditDetails'
-import EditIcon from '@material-ui/icons/Edit';
 import { logoutUser } from '../redux/actions/userActions';
 
 //MUI stuff
@@ -76,7 +75,6 @@ export class Profile extends Component {
     }
     render() {
         const {classes, user: {credentials: {handle, createdAt, bio, website, location}, loading, authenticated}} = this.props;
-        console.log(bio);
         let profileMarkup = !loading ? (authenticated ? (
             <Paper classname={classes.paper}>
                 <div className={classes.profile}>

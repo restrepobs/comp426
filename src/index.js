@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const url = 'https://rapidapi.com/brianiswu/api/recipe-puppy';
+
 
 ReactDOM.render(
   <React.StrictMode>

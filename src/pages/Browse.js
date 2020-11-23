@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {food} from "../components/Suggestions"
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 export class Browse extends Component {
     state = {
@@ -72,8 +74,7 @@ export class Browse extends Component {
             <div>
             <br></br>
             <div>
-            <h2>Can't think of any recipes? That's okay! Browse through these recipes and see which ones you like.</h2>
-            
+            <Typography variant="h3" style={{textAlign: 'center'}}>Recipeezy's Most Popular Recipes! </Typography>
             <br></br>
 
             <div style={{fontSize:'20px'}}>{this.state.title}</div>  
@@ -124,7 +125,8 @@ export class Browse extends Component {
             <br></br>
             <br></br>
 
-            <button className='btn btn-info my-3' onClick={this.refreshPage}>Generate More Recipes</button>
+            {/* <button className='btn btn-info my-3' onClick={this.refreshPage}>Generate More Recipes</button> */}
+            <Button onClick={this.refreshPage} style={{margin: '0 auto', display:'block', marginBottom: '10px'}}variant="contained" color="primary">Generate More Recipes</Button>
             </div>
         </div>
         );

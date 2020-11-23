@@ -1,30 +1,7 @@
 import React, { Component } from 'react'
 import {recipe} from "../tempDetails"; 
-import {PuffLoader,BarLoader,BeatLoader} from 'react-spinners';
+import {PuffLoader} from 'react-spinners';
 export default class RecipeDetails extends Component {
-//     constructor(props){
-//         super(props)
-
-//         this.state = {
-//             recipe:recipe,
-//             url: `https://api.spoonacular.com/recipes/${this.props.id}/ingredientWidget.json?apiKey=82fc3eb435d84878928dc33d21b4ded3`
-//         }
-//     }
-
- 
-
-//   async componentDidMount(){
-//    try{
-//       const data = await fetch(this.state.url);
-//       const jsonData = await data.json();
-  
-//       this.setState({
-//         recipe:jsonData
-//       })
-//     }catch(error){
-//       console.log(error);
-//     }
-//   }
 state={
     recipe: recipe,
     done: false
@@ -50,7 +27,6 @@ async componentDidMount(){
     render() {
         const {extendedIngredients,title,image,sourceUrl,readyInMinutes,servings} = this.state.recipe;
         const{handleIndex} = this.props;
-        console.log(this.state.done);
         return (
             <React.Fragment>
                 {!this.state.done ? (
