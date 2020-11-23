@@ -12,7 +12,7 @@
 
 ### Recipeezy uses React for the frontend and NodeJS/Firebase for the backend. Firebase serves as Recipeezy's
 
-database
+### database
 
 ### Boostrap and Material-UI were used for styling
 
@@ -22,7 +22,7 @@ database
 
 ### The recipeezy firebase api can be found in package.json in proxy
 
-### Create:
+### `Create`:
 
 ### User:
 
@@ -40,7 +40,7 @@ database
 
 ### Response: 'post created successfully'
 
-### Read:
+### `Read`:
 
 ### User Post:
 
@@ -50,7 +50,7 @@ database
 
 ### response: details about the post in JSON
 
-### Update:
+### `Update`:
 
 ### User Profile:
 
@@ -60,7 +60,7 @@ database
 
 ### Response: 'profile updated successfully'
 
-### Delete:
+### `Delete`:
 
 ### User Post
 
