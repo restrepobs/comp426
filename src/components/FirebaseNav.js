@@ -21,22 +21,21 @@ export class FirebaseNav extends Component {
                 <Toolbar className = "nav-container">
                    {authenticated ? (
                        <Fragment>
-                          <PostScream/>
-                          {/* <Button color="inherit" component={Link} to="/">Home</Button>
-                          <Button color="inherit" component={Link} to="/explore">Explore</Button>
-                           <Button color="inherit" component={Link} to="/browse">Browse</Button> */}
                          <ul>
-                             <li style={{display: 'inline-block', padding: '15px'}}>
+                             <li style={{display: 'inline-block', padding: '-10px'}}>
+                                <PostScream/>
+                             </li>
+                             <li style={{display: 'inline-block', padding: '8px', color: 'white'}}>
                            <NavLink exact activeStyle={{color: 'yellow'}} to="/">Home</NavLink>
 
                              </li>
-                             <li style={{display: 'inline-block', padding: '15px'}}>
-                           <NavLink exact activeStyle={{color: 'yellow'}} to="/explore">Explore</NavLink>
+                             <li style={{display: 'inline-block', padding: '8px'}}>
+                           <NavLink exact activeStyle={{color: 'yellow'}} to="/explore">Profile</NavLink>
 
                              </li>
-                             <li style={{display: 'inline-block', padding: '15px'}}>
+                             <li style={{display: 'inline-block', padding: '8px'}}>
 
-                           <NavLink exact activeStyle={{color: 'yellow'}} to="/browse">Browse</NavLink>
+                           <NavLink  activeStyle={{color: 'yellow'}} to="/browse">Browse</NavLink>
                              </li>
 
                          </ul>
@@ -44,11 +43,28 @@ export class FirebaseNav extends Component {
                        </Fragment>
                    ) : (
                     <Fragment>
-                        <Button color="inherit" component={Link} to="/">Home</Button>
-                        <Button color="inherit" component={Link} to="/browse">Browse</Button>
-                        <Button color="inherit" component={Link} to="/explore">Explore</Button>
-                        <Button color="inherit" component={Link} to="/login">Login</Button>
-                        <Button color="inherit" component={Link} to="/signup">Signup</Button>
+                        <ul>
+                             <li style={{display: 'inline-block', padding: '8px'}}>
+                           <NavLink exact activeStyle={{color: 'yellow'}} to="/">Home</NavLink>
+
+                             </li>
+                             <li style={{display: 'inline-block', padding: '8px'}}>
+                           <NavLink exact activeStyle={{color: 'yellow'}} to="/explore">Profile</NavLink>
+
+                             </li>
+                             <li style={{display: 'inline-block', padding: '8px'}}>
+
+                           <NavLink  activeStyle={{color: 'yellow'}} to="/browse">Browse</NavLink>
+                             </li>
+                             <li style={{display: 'inline-block', padding: '8px'}}>
+
+                            <NavLink  activeStyle={{color: 'yellow'}} to="/login">Login</NavLink>
+                            </li>
+                            <li style={{display: 'inline-block', padding: '8px'}}>
+
+                            <NavLink  activeStyle={{color: 'yellow'}} to="/signup">Signup</NavLink>
+                         </li>
+                        </ul>
                     </Fragment>
                    )}
                 </Toolbar>

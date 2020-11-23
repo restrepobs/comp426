@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Recipe from './Recipe';
 import RecipeSearch from './RecipeSearch';
+import Typography from "@material-ui/core/Typography";
 export default class RecipeList extends Component {
    render() {
         const {recipes,handleDetails,value,handleSubmit, handleChange,error} = this.props;
@@ -12,7 +13,7 @@ export default class RecipeList extends Component {
                 <div className="row">
                     <div className="col-10 mx-auto col-md-6 text-center 
                     text-uppercase mb-3">
-                        <h1 className ="text-slanted">recipe list</h1>
+                        <Typography variant="h3"> Recipe LIst</Typography>
                     </div>
                 </div>
                 {/* end of title */}

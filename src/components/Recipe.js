@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Recipe.css";
+import Button from "@material-ui/core/Button";
 
 export default class Recipe extends Component {
     render() {
@@ -27,9 +28,12 @@ const{handleDetails} = this.props;
                           <h6>{title}</h6>
                       </div>
                       <div className="card-footer">
-                          <button type="button"
+                          {/* <button type="button"
                           className="btn btn-primary text-capitalize" onClick={handleDetails}
-                          >details</button>
+                          >details</button> */}
+                          <Button type="button" onClick={handleDetails} variant="contained" color="primary">
+                              Details
+                          </Button>
                           
                       </div>
                    </div>

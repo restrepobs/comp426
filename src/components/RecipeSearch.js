@@ -3,6 +3,7 @@ import "./RecipeSearch.css";
 import Autocomplete, { search } from './Autocomplete'
 import {food} from './Suggestions'
 import './Autocomplete.css'
+import Typography from "@material-ui/core/Typography";
 
 export default class RecipeSearch extends Component {
     state={
@@ -24,7 +25,8 @@ export default class RecipeSearch extends Component {
                     <div className="row">
                         <div className="col-10 mx-auto md-8 mt-5 text-center">
                             <br></br>
-                            <h1 className="text-capitalize">search for recipe with ingredients</h1>
+                            <Typography variant="h2"> Recipeezy</Typography>
+                            
                             <form classname="mt-4" onSubmit={handleSubmit}>
                                 <label htmlFor="search" className="text-capitalize">
                                     type ingredients separated by comma
@@ -44,7 +46,7 @@ export default class RecipeSearch extends Component {
                                      ></input>*/}
 
                                     <div className="input-group-append">
-                                        <button type="submit" className="btn input-group bg-primary text-white" style={{zIndex:0}} onSubmit={handleSubmit}>
+                                        <button type="submit" className="btn input-group text-white" style={{zIndex:0, backgroundColor: '#3F51B0'}} onSubmit={handleSubmit}>
                                         <i class="fas fa-search"></i>
 
                                         </button>

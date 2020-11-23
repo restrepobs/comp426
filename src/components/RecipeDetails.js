@@ -75,7 +75,7 @@ async componentDidMount(){
                 <div className="container">
                     <div className="row">
                         <div className="col-10 mx-auto col-md-6 my-3">
-                            <button type="button" className="btn btn-warning mb-5 text-capitalize" style={{marginTop: "17vh"}} onClick={() => handleIndex(1)}>back to recipe list</button>
+                            <button type="button" className="btn btn-warning mb-5 text-capitalize" style={{marginTop: "17vh", color: 'white'}} onClick={() => handleIndex(1)}>back to recipe list</button>
                             <img src={image}
                             className="d-block w-75"
                             alt="recipe"></img>
