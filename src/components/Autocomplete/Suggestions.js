@@ -112,7 +112,6 @@ const food =[
     'peach',
     'potato',
     'pear',
-    'pea',
     'pineapple',
     'plum',
     'pomegranate',
