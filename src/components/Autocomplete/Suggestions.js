@@ -4,7 +4,7 @@ const food =[
     'anchovies',
     'apricots',
     'artichokes',
-    'avacado',
+    'avocado',
     'arugula',
     'apricot',
     'applesauce',
